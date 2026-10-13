@@ -1,0 +1,32 @@
+[package]
+name = "oxshot"
+version.workspace = true
+edition.workspace = true
+description = "Fast screenshots with a Screenpresso-style annotation editor for Linux"
+
+[dependencies]
+oxshot-core.workspace = true
+oxshot-x11.workspace = true
+oxshot-update.workspace = true
+libc = "0.2"
+gpui-kit = "0.7"
+anyhow.workspace = true
+log.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+image.workspace = true
+env_logger = "0.11"
+smallvec = "1"
+futures = "0.3"
+raw-window-handle = "0.6"
+resvg = "0.45"
+rust-i18n = "4"
+sys-locale = "0.3"
+notify-rust = { version = "4", features = ["images"] }
+zbus = { version = "5", default-features = false, features = ["blocking-api", "async-io"] }
+rust-embed = "8"
+arboard = { version = "3", default-features = false, features = ["image-data"] }
+ksni = { version = "0.3", features = ["blocking"] }
+dirs = "6"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+trash = "5"

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<!-- Lets OxShot install its updates. The action runs the installed program
+     with one fixed argument; an administrator password is asked for every
+     time (kept for a few minutes). -->
+<policyconfig>
+  <vendor>OxShot</vendor>
+  <vendor_url>https://github.com/srcmkr/OxShot</vendor_url>
+  <icon_name>oxshot</icon_name>
+
+  <action id="io.github.srcmkr.oxshot.update">
+    <description>Update OxShot to the latest release</description>
+    <description xml:lang="de">OxShot auf die neueste Version aktualisieren</description>
+    <description xml:lang="es">Actualizar OxShot a la última versión</description>
+    <description xml:lang="fr">Mettre à jour OxShot vers la dernière version</description>
+    <description xml:lang="pt_BR">Atualizar o OxShot para a versão mais recente</description>
+    <description xml:lang="ru">Обновить OxShot до последней версии</description>
+    <description xml:lang="zh_CN">将 OxShot 更新到最新版本</description>
+    <message>OxShot wants to install its latest version.</message>
+    <message xml:lang="de">OxShot möchte die neueste Version installieren.</message>
+    <message xml:lang="es">OxShot quiere instalar su última versión.</message>
+    <message xml:lang="fr">OxShot souhaite installer sa dernière version.</message>
+    <message xml:lang="pt_BR">O OxShot quer instalar sua versão mais recente.</message>
+    <message xml:lang="ru">OxShot хочет установить свою последнюю версию.</message>
+    <message xml:lang="zh_CN">OxShot 想要安装其最新版本。</message>
+    <defaults><allow_any>auth_admin</allow_any><allow_inactive>auth_admin</allow_inactive><allow_active>auth_admin_keep</allow_active></defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">@APP@</annotate>
+    <annotate key="org.freedesktop.policykit.exec.argv1">--update</annotate>
+  </action>
+</policyconfig>

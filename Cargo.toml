@@ -1,0 +1,39 @@
+[workspace]
+resolver = "3"
+members = ["crates/oxshot-core", "crates/oxshot-x11", "crates/oxshot-update", "crates/oxshot"]
+exclude = ["vendor/xim-ctext"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/srcmkr/OxShot"
+
+[workspace.dependencies]
+oxshot-core = { path = "crates/oxshot-core" }
+oxshot-x11 = { path = "crates/oxshot-x11" }
+oxshot-update = { path = "crates/oxshot-update" }
+anyhow = "1"
+log = "0.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp", "bmp", "tiff", "gif"] }
+
+[profile.dev.package."*"]
+opt-level = 2
+
+# Rendering and capture must stay fast in debug builds too.
+[profile.dev.package.oxshot-core]
+opt-level = 2
+
+[profile.dev.package.oxshot-x11]
+opt-level = 2
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+
+# Typing an umlaut through an X input method (ibus) made GPUI panic; see
+# vendor/xim-ctext/README.md (patch taken over from the Anything project).
+[patch.crates-io]
+xim-ctext = { path = "vendor/xim-ctext" }

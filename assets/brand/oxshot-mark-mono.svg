@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="96 96 320 320" width="320" height="320" color="#1b1d22">
+  <g id="glyph">
+    <g fill="none" stroke="currentColor" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M124 196 V164 Q124 124 164 124 H196"/>
+      <path d="M316 124 H348 Q388 124 388 164 V196"/>
+      <path d="M388 316 V348 Q388 388 348 388 H316"/>
+      <path d="M196 388 H164 Q124 388 124 348 V316"/>
+    </g>
+    <g stroke="currentColor" stroke-width="22" stroke-linecap="round">
+      <path d="M256 206 V234"/><path d="M256 278 V306"/><path d="M206 256 H234"/><path d="M278 256 H306"/>
+    </g>
+  </g>
+</svg>

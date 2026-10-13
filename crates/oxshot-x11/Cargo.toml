@@ -1,0 +1,15 @@
+[package]
+name = "oxshot-x11"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+log.workspace = true
+image.workspace = true
+oxshot-core.workspace = true
+x11rb = { version = "0.13", features = ["shm", "randr", "xfixes", "xkb"] }
+libc = "0.2"
+
+[dev-dependencies]
+x11rb = { version = "0.13", features = ["xtest"] }

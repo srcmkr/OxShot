@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b2f39"/>
+      <stop offset="1" stop-color="#15171c"/>
+    </linearGradient>
+    <linearGradient id="ox" x1="0.15" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#ff8a3d"/>
+      <stop offset="0.55" stop-color="#e2531f"/>
+      <stop offset="1" stop-color="#a8360f"/>
+    </linearGradient>
+    <linearGradient id="oxu" gradientUnits="userSpaceOnUse" x1="124" y1="124" x2="388" y2="388">
+      <stop offset="0" stop-color="#ff8a3d"/>
+      <stop offset="0.55" stop-color="#e2531f"/>
+      <stop offset="1" stop-color="#a8360f"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#bg)"/>
+  <rect x="26" y="26" width="460" height="460" rx="110" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="4"/>
+  <g id="glyph">
+    <g fill="none" stroke="url(#oxu)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M124 196 V164 Q124 124 164 124 H196"/>
+      <path d="M316 124 H348 Q388 124 388 164 V196"/>
+      <path d="M388 316 V348 Q388 388 348 388 H316"/>
+      <path d="M196 388 H164 Q124 388 124 348 V316"/>
+    </g>
+    <g stroke="#ffffff" stroke-width="22" stroke-linecap="round">
+      <path d="M256 206 V234"/><path d="M256 278 V306"/><path d="M206 256 H234"/><path d="M278 256 H306"/>
+    </g>
+  </g>
+</svg>

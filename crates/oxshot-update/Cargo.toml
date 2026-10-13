@@ -1,0 +1,16 @@
+[package]
+name = "oxshot-update"
+description = "Finds, checks and unpacks new OxShot releases"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+flate2 = "1"
+minisign-verify = "0.3"
+serde_json.workspace = true
+tar = "0.4"
+ureq = "3"
+
+[dev-dependencies]
+minisign = "0.10"
