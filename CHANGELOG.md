@@ -6,6 +6,8 @@ the next version.
 
 ## Unreleased
 
+## 0.1.1 - 2026-10-14
+
 ### Fixed
 
 - Capturing from the tray menu no longer freezes the screen with the menu still
