@@ -5,6 +5,9 @@ use rust_i18n::t;
 
 use crate::app::{CaptureMode, Command};
 
+/// How long the panel needs to take its menu off the screen.
+const MENU_CLOSE_DELAY: std::time::Duration = std::time::Duration::from_millis(350);
+
 struct Tray {
     tx: UnboundedSender<Command>,
 }
@@ -39,7 +42,18 @@ impl ksni::Tray for Tray {
             StandardItem {
                 label: label.into(),
                 activate: Box::new(move |t: &mut Self| {
-                    let _ = t.tx.unbounded_send(cmd.clone());
+                    // The panel draws the menu and fades it out after the click: a capture
+                    // started at once would freeze the screen with the menu still on it.
+                    let screen_capture = matches!(cmd, Command::Capture(_) | Command::PickColor);
+                    let (tx, cmd) = (t.tx.clone(), cmd.clone());
+                    if screen_capture {
+                        std::thread::spawn(move || {
+                            std::thread::sleep(MENU_CLOSE_DELAY);
+                            let _ = tx.unbounded_send(cmd);
+                        });
+                    } else {
+                        let _ = tx.unbounded_send(cmd);
+                    }
                 }),
                 ..Default::default()
             }

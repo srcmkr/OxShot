@@ -6,6 +6,11 @@ the next version.
 
 ## Unreleased
 
+### Fixed
+
+- Capturing from the tray menu no longer freezes the screen with the menu still
+  on it: captures started from the menu wait until the panel has closed it.
+
 ## 0.1.0
 
 The first public version.
