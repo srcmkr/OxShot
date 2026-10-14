@@ -16,7 +16,8 @@ git rev-parse -q --verify "refs/tags/v$version" >/dev/null && { echo "tag v$vers
 # version's section, the release notes and what the app shows after the update.
 awk '/^## Unreleased/ { on = 1; next } on && /^## / { exit } on' CHANGELOG.md | grep -q '[^[:space:]]' \
     || { echo "write what is new under \"## Unreleased\" in CHANGELOG.md first" >&2; exit 1; }
-sed -i "0,/^## Unreleased.*/s//## $version - $(date +%F)/" CHANGELOG.md
+# A fresh, empty "Unreleased" section stays on top for what comes next.
+sed -i "0,/^## Unreleased.*/s//## Unreleased\n\n## $version - $(date +%F)/" CHANGELOG.md
 
 # The workspace version, the first "version =" in Cargo.toml.
 sed -i "0,/^version = \".*\"/s//version = \"$version\"/" Cargo.toml
