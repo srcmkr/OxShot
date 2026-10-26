@@ -10,6 +10,10 @@
 
 *Capture. Annotate. Paste.*
 
+<a href="https://youtu.be/U9j8TN99Nw4"><img src="docs/screenshots/video-preview.jpg" width="720" alt="Video: answering a chat question with an annotated OxShot screenshot"></a>
+
+<sub>[Watch the video on YouTube](https://youtu.be/U9j8TN99Nw4) (1:29)</sub>
+
 ### Install on Debian, Ubuntu or Linux Mint
 
 ```sh
